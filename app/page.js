@@ -1,69 +1,92 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
 
-export default function Home() {
+export default function BirthdayPage() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const photos = [
+    { src: '/images/foto1.jpg', caption: 'Momen Indah Kita Bersama ❤️' },
+    { src: '/images/foto2.jpg', caption: 'Keluarga Kecil Kebanggaanku 🥰' },
+    { src: '/images/foto3.jpg', caption: 'Terima kasih telah menjadi istri terbaik ✨' },
+  ];
+
+  const handleOpenGift = () => {
+    setIsOpen(true);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '16px', background: 'linear-gradient(to bottom right, #fce7f3, #f3e8ff, #fce7f3)' }}>
+      {!isOpen ? (
+        <div style={{ background: 'white', padding: '32px', borderRadius: '16px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', maxWidth: '400px', width: '100%', textAlign: 'center', border: '1px solid #fbcfe8', zIndex: 50, position: 'relative' }}>
+          <span style={{ fontSize: '48px', display: 'block', marginBottom: '16px' }}>💌</span>
+          <h1 style={{ fontSize: '22px', fontWeight: 'bold', color: '#db2777', marginBottom: '8px' }}>Spesial Untuk Istri Tercinta</h1>
+          <p style={{ fontSize: '14px', color: '#4b5563', marginBottom: '24px' }}>Ada sesuatu yang spesial nih buat kamu di hari ulang tahunmu...</p>
+          
+          <button
+            type="button"
+            onClick={handleOpenGift}
+            style={{
+              width: '100%',
+              backgroundColor: '#ec4899',
+              color: 'white',
+              fontWeight: 'bold',
+              padding: '16px 24px',
+              borderRadius: '9999px',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '16px',
+              boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+            }}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Buka Kado 🎁
+          </button>
         </div>
-      </main>
-    </div>
+      ) : (
+        <div style={{ background: 'white', padding: '24px', borderRadius: '24px', boxShadow: '0 20px 25px rgba(0,0,0,0.15)', maxWidth: '600px', width: '100%', margin: '20px 0', border: '1px solid #fbcfe8', zIndex: 50, position: 'relative' }}>
+          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+            <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#db2777', marginBottom: '8px' }}>
+              Selamat Ulang Tahun, Sayang! 🎉
+            </h1>
+            <p style={{ fontSize: '15px', color: '#f472b6', fontWeight: '500' }}>Barakallahu Fii Umrik, Istriku Tercinta</p>
+          </div>
+
+          <div style={{ backgroundColor: '#fdf2f8', padding: '20px', borderRadius: '16px', marginBottom: '24px', border: '1px solid #fce7f3', color: '#374151', lineHeight: '1.6', fontSize: '14px' }}>
+            <p style={{ marginBottom: '12px' }}>
+              Terima kasih sudah menjadi pendamping hidup yang luar biasa, ibu yang penyayang untuk anak-anak, dan rumah tempatku pulang yang paling nyaman. 
+            </p>
+            <p style={{ marginBottom: '12px' }}>
+              Semoga di pertambahan usia ini, Allah SWT senantiasa memberikan kesehatan, kebahagiaan, keberkahan dalam setiap langkah, dan semoga semua doa-doamu dikabulkan.
+            </p>
+            <p style={{ textAlign: 'right', fontWeight: 'bold', color: '#db2777', marginTop: '16px' }}>
+              — Dari suami dan anak-anak tercinta ❤️
+            </p>
+          </div>
+
+          <h2 style={{ fontSize: '18px', fontWeight: 'bold', color: '#374151', marginBottom: '16px', textAlign: 'center' }}>Kenangan Indah Kita 📸</h2>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            {photos.map((photo, index) => (
+              <div key={index} style={{ backgroundColor: 'white', borderRadius: '12px', overflow: 'hidden', border: '1px solid #f3f4f6', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                <div style={{ height: '160px', width: '100%', backgroundColor: '#e5e7eb', position: 'relative' }}>
+                  <img 
+                    src={photo.src} 
+                    alt={photo.caption} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <p style={{ padding: '12px', fontSize: '12px', textAlign: 'center', color: '#4b5563', fontWeight: '500' }}>{photo.caption}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', fontSize: '12px', color: '#9ca3af', marginTop: '24px' }}>
+            Made with lots of love ❤️ | Special Gift
+          </div>
+        </div>
+      )}
+    </main>
   );
 }
