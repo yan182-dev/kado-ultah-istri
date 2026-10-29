@@ -5,9 +5,9 @@ export default function BirthdayPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   const photos = [
-    { src: '/images/foto1.jpg', caption: 'Momen Indah Kita Bersama ❤️' },
-    { src: '/images/foto2.jpg', caption: 'Keluarga Kecil Kebanggaanku 🥰' },
-    { src: '/images/foto3.jpg', caption: 'Terima kasih telah menjadi istri terbaik ✨' },
+    { src: '/images/foto1.JPG', caption: 'Momen Indah Kita Bersama ❤️' },
+    { src: '/images/foto2.JPG', caption: 'Keluarga Kecil Kebanggaanku 🥰' },
+    { src: '/images/foto3.JPG', caption: 'Terima kasih telah menjadi istri terbaik ✨' },
   ];
 
   const handleOpenGift = () => {
